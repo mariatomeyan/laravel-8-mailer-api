@@ -41,7 +41,24 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
-
+        'frames' => [
+            'driver' => 'local',
+            'root' => storage_path('app/frames'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+        'images' => [
+            'driver' => 'local',
+            'root' => storage_path('app/images'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+        'backgrounds' => [
+            'driver' => 'local',
+            'root' => storage_path('app/backgrounds'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -67,6 +84,8 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('storage/frames') => storage_path('app/frames'),
+        public_path('storage/images') => storage_path('app/images')
     ],
 
 ];
